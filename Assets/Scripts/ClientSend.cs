@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -40,6 +41,14 @@ public class ClientSend : MonoBehaviour
             _packet.Write(GameManager.players[Client.instance.myId].transform.rotation);
 
             SendUDPData(_packet);
+        }
+    }
+
+    internal static void Spell2()
+    {
+        using (Packet _packet = new Packet((int)ClientPackets.spell2))
+        {
+            SendTCPData(_packet);
         }
     }
 

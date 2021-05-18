@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,11 +12,15 @@ public class GameManager : MonoBehaviour
     public static Dictionary<int, FireballManager> fireballs = new Dictionary<int, FireballManager>();
     public static Dictionary<int, BasicAttackManager> basicAttacks = new Dictionary<int, BasicAttackManager>();
 
+
+
     public GameObject localPlayerPrefab;
     public GameObject playerPrefab;
     public GameObject itemSpawnerPrefab;
     public GameObject fireballPrefab;
     public GameObject basicAttackPrefab;
+    public GameObject blastWavePrefab;
+
 
     private void Awake()
     {
@@ -63,6 +68,13 @@ public class GameManager : MonoBehaviour
         GameObject _basic = Instantiate(basicAttackPrefab, _position, Quaternion.identity);
         _basic.GetComponent<BasicAttackManager>().Initialize(_id);
         basicAttacks.Add(_id, _basic.GetComponent<BasicAttackManager>());
+    }
+
+    public void BlastWave(Vector3 position)
+    {
+        var effect = Instantiate(blastWavePrefab, new Vector3(position.x, position.y - 0.5f, position.z), Quaternion.identity);
+        Destroy(effect, 5f);
+
     }
 
     /*public void SpawnEnemy(int _id, Vector3 _position)

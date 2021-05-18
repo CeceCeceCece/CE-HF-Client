@@ -286,7 +286,8 @@ public class Client : MonoBehaviour
             { (int)ServerPackets.fireballExploded, ClientHandle.FireballExploded },
             { (int)ServerPackets.spawnBasicAttack, ClientHandle.SpawnBasicAttack },
             { (int)ServerPackets.basicAttackPosition, ClientHandle.BasicAttackPosition },
-            { (int)ServerPackets.basicAttackHit, ClientHandle.BasicAttackHit }
+            { (int)ServerPackets.basicAttackHit, ClientHandle.BasicAttackHit },
+            { (int)ServerPackets.blastWaveCasted, ClientHandle.BlastWaveCasted }
         };
         Debug.Log("Initialized packets.");
     }

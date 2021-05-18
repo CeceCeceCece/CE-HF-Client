@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Net;
 using UnityEngine;
@@ -151,6 +152,13 @@ public class ClientHandle : MonoBehaviour
         Vector3 _position = _packet.ReadVector3();
 
         GameManager.basicAttacks[_basicId].Explode(_position);
+    }
+
+    public static void BlastWaveCasted(Packet _packet)
+    {
+        Vector3 _position = _packet.ReadVector3();
+        GameManager.instance.BlastWave(_position);
+        
     }
 
     /*public static void SpawnEnemy(Packet _packet)

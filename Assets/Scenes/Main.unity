@@ -2138,6 +2138,8 @@ MonoBehaviour:
     type: 3}
   basicAttackPrefab: {fileID: 5832896411613702378, guid: ad650b3a04095f04bb56856cea9d1818,
     type: 3}
+  blastWavePrefab: {fileID: 1000011128802252, guid: bd30f702c1a9a034b9b4f9701cbbf805,
+    type: 3}
 --- !u!4 &1989197516
 Transform:
   m_ObjectHideFlags: 0

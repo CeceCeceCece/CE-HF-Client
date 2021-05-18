@@ -39,7 +39,8 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Spell1");
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
-            Debug.Log("Spell 2");
+            ClientSend.Spell2();
+
         if (Input.GetKeyDown(KeyCode.Alpha2))
             Debug.Log("Spell 3");
         if (Input.GetKeyDown(KeyCode.Alpha2))
