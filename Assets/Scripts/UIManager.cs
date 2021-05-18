@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     public GameObject startMenu;
     public InputField usernameField;
     public InputField connectionField;
+    public Dropdown classChooser;
     public GameObject hud;
 
     private void Awake()

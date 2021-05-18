@@ -14,11 +14,12 @@ public class PlayerManager : MonoBehaviour
     public MeshRenderer model;
     public HealthBar healthBar;
     public Text usernameText;
+    public Text classText;
    
 
     private Color materialColor;
 
-    public void Initialize(int _id, string _username)
+    public void Initialize(int _id, string _username, string _classText = "")
     {
         id = _id;
         username = _username;
@@ -30,11 +31,15 @@ public class PlayerManager : MonoBehaviour
         if(usernameText == null)
             usernameText = GameObject.FindGameObjectWithTag("LocalUsernameField").GetComponent<Text>();
 
+        if (classText == null)
+            classText = GameObject.FindGameObjectWithTag("LocalClassTextField").GetComponent<Text>();
+
 
         healthBar.SetMaximumHealth(health);
         healthBar.SetHealth(health);
         usernameText.text = username;
-       
+        classText.text = _classText;
+
 
     }
 
