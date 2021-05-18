@@ -287,7 +287,9 @@ public class Client : MonoBehaviour
             { (int)ServerPackets.spawnBasicAttack, ClientHandle.SpawnBasicAttack },
             { (int)ServerPackets.basicAttackPosition, ClientHandle.BasicAttackPosition },
             { (int)ServerPackets.basicAttackHit, ClientHandle.BasicAttackHit },
-            { (int)ServerPackets.blastWaveCasted, ClientHandle.BlastWaveCasted }
+            { (int)ServerPackets.blastWaveCasted, ClientHandle.BlastWaveCasted },
+            { (int)ServerPackets.iceBlockCasted, ClientHandle.IceBlockCasted },
+            { (int)ServerPackets.iceBlockEnded, ClientHandle.IceBlockEnded },
         };
         Debug.Log("Initialized packets.");
     }

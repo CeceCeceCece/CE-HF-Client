@@ -23,7 +23,9 @@ public enum ServerPackets
     spawnBasicAttack,
     basicAttackPosition,
     basicAttackHit,
-    blastWaveCasted
+    blastWaveCasted,
+    iceBlockEnded,
+    iceBlockCasted
 }
 
 /// <summary>Sent from client to server.</summary>
@@ -34,7 +36,8 @@ public enum ClientPackets
     basicAttack,
     spell1,
     spell2,
-    specialAttack
+    specialAttack,
+    spell3
 }
 
 

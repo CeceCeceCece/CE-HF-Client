@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +14,9 @@ public class PlayerManager : MonoBehaviour
     public MeshRenderer model;
     public HealthBar healthBar;
     public Text usernameText;
+   
+
+    private Color materialColor;
 
     public void Initialize(int _id, string _username)
     {
@@ -31,6 +35,7 @@ public class PlayerManager : MonoBehaviour
         healthBar.SetHealth(health);
         usernameText.text = username;
        
+
     }
 
     public void SetHealth(float _health)
@@ -54,5 +59,16 @@ public class PlayerManager : MonoBehaviour
     {
         gameObject.SetActive(true);
         SetHealth(maxHealth);
+    }
+
+    public void IceBlockCasted()
+    {
+        materialColor = model.material.color;
+        model.material.color = Color.yellow;
+    }
+
+    public void IceBlockEnded()
+    {
+        model.material.color = materialColor;
     }
 }

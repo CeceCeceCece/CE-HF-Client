@@ -161,6 +161,18 @@ public class ClientHandle : MonoBehaviour
         
     }
 
+   public static void IceBlockCasted(Packet _packet)
+    {
+        int playerID = _packet.ReadInt();
+        GameManager.players[playerID].IceBlockCasted();
+    }
+
+    public static void IceBlockEnded(Packet _packet)
+    {
+        int playerID = _packet.ReadInt();
+        GameManager.players[playerID].IceBlockEnded();
+    }
+
     /*public static void SpawnEnemy(Packet _packet)
     {
         int _enemyId = _packet.ReadInt();
