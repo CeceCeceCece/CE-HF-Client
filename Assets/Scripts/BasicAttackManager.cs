@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class ProjectileManager : MonoBehaviour
+public class BasicAttackManager : MonoBehaviour
 {
+ 
     public int id;
     public GameObject explosionPrefab;
 
@@ -16,9 +15,10 @@ public class ProjectileManager : MonoBehaviour
     {
         transform.position = _position;
         var effect = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-        GameManager.projectiles.Remove(id);
+        GameManager.basicAttacks.Remove(id);
         Destroy(gameObject);
         Destroy(effect, 5f);
     }
+
 }
 

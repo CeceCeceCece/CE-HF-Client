@@ -8,12 +8,14 @@ public class GameManager : MonoBehaviour
 
     public static Dictionary<int, PlayerManager> players = new Dictionary<int, PlayerManager>();
     public static Dictionary<int, ItemSpawner> itemSpawners = new Dictionary<int, ItemSpawner>();
-    public static Dictionary<int, ProjectileManager> projectiles = new Dictionary<int, ProjectileManager>();
+    public static Dictionary<int, FireballManager> fireballs = new Dictionary<int, FireballManager>();
+    public static Dictionary<int, BasicAttackManager> basicAttacks = new Dictionary<int, BasicAttackManager>();
 
     public GameObject localPlayerPrefab;
     public GameObject playerPrefab;
     public GameObject itemSpawnerPrefab;
-    public GameObject projectilePrefab;
+    public GameObject fireballPrefab;
+    public GameObject basicAttackPrefab;
 
     private void Awake()
     {
@@ -49,11 +51,18 @@ public class GameManager : MonoBehaviour
         _spawner.GetComponent<ItemSpawner>().Initialize(_spawnerId, _hasItem);
         itemSpawners.Add(_spawnerId, _spawner.GetComponent<ItemSpawner>());
     }
-    public void SpawnProjectile(int _id, Vector3 _position)
+    public void SpawnFireball(int _id, Vector3 _position)
     {
-        GameObject _projectile = Instantiate(projectilePrefab, _position, Quaternion.identity);
-        _projectile.GetComponent<ProjectileManager>().Initialize(_id);
-        projectiles.Add(_id, _projectile.GetComponent<ProjectileManager>());
+        GameObject _fireball = Instantiate(fireballPrefab, _position, Quaternion.identity);
+        _fireball.GetComponent<FireballManager>().Initialize(_id);
+        fireballs.Add(_id, _fireball.GetComponent<FireballManager>());
+    }
+
+    public void SpawnBasicAttack(int _id, Vector3 _position)
+    {
+        GameObject _basic = Instantiate(basicAttackPrefab, _position, Quaternion.identity);
+        _basic.GetComponent<BasicAttackManager>().Initialize(_id);
+        basicAttacks.Add(_id, _basic.GetComponent<BasicAttackManager>());
     }
 
     /*public void SpawnEnemy(int _id, Vector3 _position)

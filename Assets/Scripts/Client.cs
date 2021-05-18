@@ -281,9 +281,12 @@ public class Client : MonoBehaviour
             { (int)ServerPackets.createItemSpawner, ClientHandle.CreateItemSpawner },
             { (int)ServerPackets.itemSpawned, ClientHandle.ItemSpawned },
             { (int)ServerPackets.itemPickedUp, ClientHandle.ItemPickedUp },
-            { (int)ServerPackets.spawnProjectile, ClientHandle.SpawnProjectile },
-            { (int)ServerPackets.projectilePosition, ClientHandle.ProjectilePosition },
-            { (int)ServerPackets.projectileExploded, ClientHandle.ProjectileExploded }
+            { (int)ServerPackets.spawnFireball, ClientHandle.SpawnFireball },
+            { (int)ServerPackets.fireballPosition, ClientHandle.FireballPosition },
+            { (int)ServerPackets.fireballExploded, ClientHandle.FireballExploded },
+            { (int)ServerPackets.spawnBasicAttack, ClientHandle.SpawnBasicAttack },
+            { (int)ServerPackets.basicAttackPosition, ClientHandle.BasicAttackPosition },
+            { (int)ServerPackets.basicAttackHit, ClientHandle.BasicAttackHit }
         };
         Debug.Log("Initialized packets.");
     }

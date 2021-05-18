@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 656731573601464787}
   - component: {fileID: 391812089773190087}
   - component: {fileID: 7867829971617321776}
-  - component: {fileID: 648902692628063035}
+  - component: {fileID: -7521789242187442361}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: basicAttackForManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,7 +96,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &648902692628063035
+--- !u!114 &-7521789242187442361
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,11 +105,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5832896411613702378}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50d167593ec916b45865f1ca1243fd2f, type: 3}
+  m_Script: {fileID: 11500000, guid: 2bbc6037899b56b499456c49e77d65d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
-  explosionPrefab: {fileID: 1000011797152326, guid: 11367eac0c9a2894a8abc3fa4f2aa897,
+  explosionPrefab: {fileID: 1000013462590818, guid: ecdd96beb7f93494880c052dfccf9dc1,
     type: 3}
 --- !u!1001 &4386438309956969423
 PrefabInstance:
@@ -126,12 +126,12 @@ PrefabInstance:
     - target: {fileID: 8981650465708250614, guid: 976901c5e5635f945a1011fe2a6297a1,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8981917202772467666, guid: 976901c5e5635f945a1011fe2a6297a1,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8981945869593231498, guid: 976901c5e5635f945a1011fe2a6297a1,
         type: 3}
@@ -213,6 +213,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8985195496793641710, guid: 976901c5e5635f945a1011fe2a6297a1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.46
+      objectReference: {fileID: 0}
     - target: {fileID: 9106481125960396850, guid: 976901c5e5635f945a1011fe2a6297a1,
         type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
@@ -231,7 +236,7 @@ PrefabInstance:
     - target: {fileID: 9106539266977598924, guid: 976901c5e5635f945a1011fe2a6297a1,
         type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 120
+      value: 240
       objectReference: {fileID: 0}
     - target: {fileID: 9106539266977598924, guid: 976901c5e5635f945a1011fe2a6297a1,
         type: 3}
@@ -301,7 +306,7 @@ PrefabInstance:
     - target: {fileID: 7775411190318142967, guid: a15ad25e39b7c684cb424ec5bba6ccb6,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7778750923913984733, guid: a15ad25e39b7c684cb424ec5bba6ccb6,
         type: 3}

@@ -95,33 +95,62 @@ public class ClientHandle : MonoBehaviour
         GameManager.players[_byPlayer].itemCount++;
     }
 
-    public static void SpawnProjectile(Packet _packet)
+    public static void SpawnFireball(Packet _packet)
     {
-        int _projectileId = _packet.ReadInt();
+        int _fireballId = _packet.ReadInt();
         Vector3 _position = _packet.ReadVector3();
         int _thrownByPlayer = _packet.ReadInt();
 
-        GameManager.instance.SpawnProjectile(_projectileId, _position);
+        GameManager.instance.SpawnFireball(_fireballId, _position);
         GameManager.players[_thrownByPlayer].itemCount--;
     }
 
-    public static void ProjectilePosition(Packet _packet)
+    public static void FireballPosition(Packet _packet)
     {
-        int _projectileId = _packet.ReadInt();
+        int _fireballId = _packet.ReadInt();
         Vector3 _position = _packet.ReadVector3();
 
-        if (GameManager.projectiles.TryGetValue(_projectileId, out ProjectileManager _projectile))
+        if (GameManager.fireballs.TryGetValue(_fireballId, out FireballManager _projectile))
         {
             _projectile.transform.position = _position;
         }
     }
 
-    public static void ProjectileExploded(Packet _packet)
+    public static void FireballExploded(Packet _packet)
     {
-        int _projectileId = _packet.ReadInt();
+        int fireballId = _packet.ReadInt();
         Vector3 _position = _packet.ReadVector3();
 
-        GameManager.projectiles[_projectileId].Explode(_position);
+        GameManager.fireballs[fireballId].Explode(_position);
+    }
+
+    public static void SpawnBasicAttack(Packet _packet)
+    {
+        int _basicId = _packet.ReadInt();
+        Vector3 _position = _packet.ReadVector3();
+        int _thrownByPlayer = _packet.ReadInt();
+
+        GameManager.instance.SpawnBasicAttack(_basicId, _position);
+        GameManager.players[_thrownByPlayer].itemCount--;
+    }
+
+    public static void BasicAttackPosition(Packet _packet)
+    {
+        int _basicId = _packet.ReadInt();
+        Vector3 _position = _packet.ReadVector3();
+
+        if (GameManager.basicAttacks.TryGetValue(_basicId, out BasicAttackManager _projectile))
+        {
+            _projectile.transform.position = _position;
+        }
+    }
+
+    public static void BasicAttackHit(Packet _packet)
+    {
+        int _basicId = _packet.ReadInt();
+        Vector3 _position = _packet.ReadVector3();
+
+        GameManager.basicAttacks[_basicId].Explode(_position);
     }
 
     /*public static void SpawnEnemy(Packet _packet)
@@ -149,4 +178,4 @@ public class ClientHandle : MonoBehaviour
         float _health = _packet.ReadFloat();
 
         GameManager.enemies[_enemyId].SetHealth(_health);*/
-    }
+}

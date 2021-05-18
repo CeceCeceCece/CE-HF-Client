@@ -17,9 +17,12 @@ public enum ServerPackets
     createItemSpawner,
     itemSpawned,
     itemPickedUp,
-    spawnProjectile,
-    projectilePosition,
-    projectileExploded
+    spawnFireball,
+    fireballPosition,
+    fireballExploded,
+    spawnBasicAttack,
+    basicAttackPosition,
+    basicAttackHit
 }
 
 /// <summary>Sent from client to server.</summary>

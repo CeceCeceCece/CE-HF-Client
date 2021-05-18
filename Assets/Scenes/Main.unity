@@ -2134,7 +2134,9 @@ MonoBehaviour:
     type: 3}
   itemSpawnerPrefab: {fileID: 4619698177011536182, guid: 7a588326734c96846a04e8fe29fdf80c,
     type: 3}
-  projectilePrefab: {fileID: 5832896411613702378, guid: 63eee52dbee007e49a6219369a3af739,
+  fireballPrefab: {fileID: 5832896411613702378, guid: 63eee52dbee007e49a6219369a3af739,
+    type: 3}
+  basicAttackPrefab: {fileID: 5832896411613702378, guid: ad650b3a04095f04bb56856cea9d1818,
     type: 3}
 --- !u!4 &1989197516
 Transform:
