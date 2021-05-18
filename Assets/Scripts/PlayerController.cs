@@ -41,10 +41,13 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha2))
             ClientSend.Spell2();
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha3))
             Debug.Log("Spell 3");
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-            Debug.Log("Spell 4");
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            ClientSend.Special(camTransform.forward);
+            Debug.Log("Special");
+        }
 
         if (Input.GetKeyDown(KeyCode.F4))
             Application.Quit();

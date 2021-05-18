@@ -44,6 +44,15 @@ public class ClientSend : MonoBehaviour
         }
     }
 
+    public static void Special(Vector3 forward)
+    {
+        using (Packet _packet = new Packet((int)ClientPackets.specialAttack))
+        {
+            _packet.Write(forward);
+            SendTCPData(_packet);
+        }
+    }
+
     internal static void Spell2()
     {
         using (Packet _packet = new Packet((int)ClientPackets.spell2))

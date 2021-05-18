@@ -33,7 +33,8 @@ public enum ClientPackets
     playerMovement,
     basicAttack,
     spell1,
-    spell2
+    spell2,
+    specialAttack
 }
 
 
